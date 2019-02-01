@@ -1,7 +1,7 @@
 package core;
 
 public class Map {
-	private Tile[][] board;		//Tableau à deux dimensions de tuiles
+	private Tile[][] board;
 	
 	public Map() {
 	}
@@ -10,14 +10,11 @@ public class Map {
 		this.board = board;
 	}
 	
-	//Fonction de création de la carte
 	public Tile[][] createBoard(int sizeX, int sizeY) {
-		//Création d'un tableau à deux dimension de tuiles
-		Tile[][] board = new Tile[sizeY][sizeX];					
+		Tile[][] board = new Tile[sizeY][sizeX];
 		int i, j;
 		
-		//Remplissage de chaque case du tableau par une tuile 
-		for(i=0; i<sizeY; i++) {		
+		for(i=0; i<sizeY; i++) {
 			for(j=0; j<sizeX; j++) {
 				board[i][j] = new Tile(i, j);
 			}
@@ -25,12 +22,6 @@ public class Map {
 		return board;
 	}
 	
-	//Fonction permettant d'obtenir une tuile en fonction de ses coordonnées X et Y
-	public Tile getTileByCoordinate(int boardX, int boardY) {
-		return this.getBoard()[boardX][boardY];
-	}
-	
-	//Fonction d'affichage console du tableau de tuile
 	public void printBoard() {
 		int i, j, sizeX, sizeY;
 		sizeX = this.getBoard().length;
