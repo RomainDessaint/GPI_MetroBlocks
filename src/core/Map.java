@@ -45,5 +45,16 @@ public class Map {
 	public void setBoard(Tile[][] board) {
 		this.board = board;
 	}
+	
+	public int getXSize() {
+		return this.getBoard().length;
+	}
+	
+	public int getYSize() {
+		if(this.getXSize() == 0)
+			return 0;
+		else 
+			return this.getBoard()[0].length;
+	}
 }
 
