@@ -12,7 +12,28 @@ public class ResidentialBlock extends Block {
 		this.averageTransportTime = averageTransportTime;
 		this.satisfaction = satisfaction;
 	}
-	
-	
 
+	public int getTax() {
+		return tax;
+	}
+
+	public void setTax(int tax) {
+		this.tax = tax;
+	}
+
+	public int getAverageTransportTime() {
+		return averageTransportTime;
+	}
+
+	public void setAverageTransportTime(int averageTransportTime) {
+		this.averageTransportTime = averageTransportTime;
+	}
+
+	public int getSatisfaction() {
+		return satisfaction;
+	}
+
+	public void setSatisfaction(int satisfaction) {
+		this.satisfaction = satisfaction;
+	}
 }
