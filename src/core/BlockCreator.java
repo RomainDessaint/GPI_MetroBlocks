@@ -29,12 +29,15 @@ public class BlockCreator {
 		switch(map.getBoard()[y-1][x-1].getType()) {
 			case 1 : 
 				ResidentialBlock RB = new ResidentialBlock(50, 0, false, 500, 0, 0);
+				map.getBoard()[y-1][x-1].setBlock(RB);
 			break;
 			case 2 : 
 				CommercialBlock CB = new CommercialBlock(200, 0, false, 500, 0, 0);
-				break;
+				map.getBoard()[y-1][x-1].setBlock(CB);
+			break;
 			case 3 : 
 				PublicServiceBlock PSB = new PublicServiceBlock(100, 0, false, 800);
+				map.getBoard()[y-1][x-1].setBlock(PSB);
 			break;
 		}
 						
