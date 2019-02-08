@@ -19,7 +19,7 @@ public class Map {
 		//Remplissage de chaque case du tableau par une tuile 
 		for(i=0; i<sizeY; i++) {		
 			for(j=0; j<sizeX; j++) {
-				board[i][j] = new Tile(i, j);
+				board[i][j] = new Tile(i, j, 0);
 			}
 		}
 		return board;
@@ -41,7 +41,16 @@ public class Map {
 		
 		for(i=0; i<sizeX; i++) {
 			for(j=0; j<sizeY; j++) {
-				System.out.print("X ");
+				switch(this.getBoard()[i][j].getType()) {
+					case 0 : System.out.print("X ");
+					break;
+					case 1 : System.out.print("R ");
+					break;
+					case 2 : System.out.print("C ");
+					break;
+					case 3 : System.out.print("P ");
+					break;
+				}
 			}
 			System.out.print("\n");
 		}
