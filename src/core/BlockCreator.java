@@ -25,5 +25,18 @@ public class BlockCreator {
 
 	void createBlock(Map map, int x, int y, int type) {			
 		map.getBoard()[y-1][x-1].setType(type); 
+		
+		switch(map.getBoard()[y-1][x-1].getType()) {
+			case 1 : 
+				ResidentialBlock RB = new ResidentialBlock(50, 0, false, 500, 0, 0);
+			break;
+			case 2 : 
+				CommercialBlock CB = new CommercialBlock(200, 0, false, 500, 0, 0);
+				break;
+			case 3 : 
+				PublicServiceBlock PSB = new PublicServiceBlock(100, 0, false, 800);
+			break;
+		}
+						
 	}
 }

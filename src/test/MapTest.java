@@ -12,11 +12,13 @@ public class MapTest extends TestCase {
 
 		Tile[][] board = new Tile[2][3];	
 		
-		board[1][2] = new Tile(1, 2, 0);
+		board[1][2] = new Tile(1, 2, 0,null);
 
 		assertTrue(board instanceof Tile[][] );
 
 		assertNotNull(board[1][2]);	
+
+		assertNull(board[1][2].getBlock());	
 
 		assertTrue(board[1][2] instanceof Tile );
 

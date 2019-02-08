@@ -4,11 +4,14 @@ public class Tile {
 	private int coordinateX;		//Coordonnée X de la tuile dans la carte
 	private int coordinateY;		//Coordonnée Y de la tuile dans la carte
 	private int type;				//Type de la tuile 
+	private Block block; 
 	
-	public Tile(int coordinateX, int coordinateY, int type) {
+	public Tile(int coordinateX, int coordinateY, int type,Block block) {
 		this.coordinateX = coordinateX;
 		this.coordinateY = coordinateY;
 		this.type = type;
+		this.block = block;
+
 	}
 
 	public int getCoordinateX() {
@@ -26,4 +29,15 @@ public class Tile {
 	public void setType(int type) {
 		this.type = type;
 	}
+
+	public Block getBlock() {
+		return block;
+	}
+
+	public void setBlock(Block block) {
+		this.block = block;
+	}
+	
+	
+	
 }

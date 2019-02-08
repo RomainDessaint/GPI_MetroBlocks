@@ -16,7 +16,7 @@ public class Map {
 		
 		for(i=0; i<sizeY; i++) {
 			for(j=0; j<sizeX; j++) {
-				board[i][j] = new Tile(i, j, 0);
+				board[i][j] = new Tile(i, j, 0, null);
 			}
 		}
 		return board;
