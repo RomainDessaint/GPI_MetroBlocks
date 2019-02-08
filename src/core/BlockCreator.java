@@ -23,11 +23,7 @@ public class BlockCreator {
 		createBlock(map, x, y, type);
 	}
 
-	void createBlock(Map map, int x, int y, int type) {	
-		int i, j;
-		int sizeX = map.getXSize();
-		int sizeY = map.getYSize();
-		
+	void createBlock(Map map, int x, int y, int type) {			
 		map.getBoard()[y-1][x-1].setType(type); 
 	}
 }
