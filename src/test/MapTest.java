@@ -12,7 +12,7 @@ public class MapTest extends TestCase {
 
 		Tile[][] board = new Tile[2][3];	
 		
-		board[1][2] = new Tile(1, 2);
+		board[1][2] = new Tile(1, 2, 0);
 
 		assertTrue(board instanceof Tile[][] );
 
