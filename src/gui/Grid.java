@@ -16,23 +16,23 @@ public class Grid extends JPanel implements ActionListener
 	 */
 	private static final long serialVersionUID = 1L;
 
-JButton b[][] = new JButton[20][20];
+JButton b[][] = new JButton[20][10];
 
 
   int v1[] = { 2, 5, 3, 7, 28 };
   int v2[] = { 3, 5, 6, 9, 12 };
   Map map=new Map();
-  JPanel construct = new JPanel();
+//  JPanel construct = new JPanel();
   
   public Grid(String title)
   {
 //    super(title);
 	  grid(map);
-	  construct.setSize(new Dimension(100, 100));
-	  construct.setLocation(150, 150);
+//	  construct.setSize(new Dimension(100, 100));
+//	  construct.setLocation(150, 150);
 	  setLayout(new GridLayout(20, 10));
 //	  setBackground(Color.red); 
-	  add(construct);
+//	  add(construct);
 	  setVisible(true);
 //	    setDefaultCloseOperation(EXIT_ON_CLOSE );
 	  //  this.add(clickToAction);
@@ -41,7 +41,7 @@ JButton b[][] = new JButton[20][20];
 
   public void grid(Map map) {
 	  int h, sizeX, sizeY,sizeH;
-	  Tile[][] board = map.createBoard(20, 20);
+	  Tile[][] board = map.createBoard(20, 10);
 		map.setBoard(board);
 		
 		sizeX = map.getBoard().length;
@@ -104,22 +104,22 @@ JButton b[][] = new JButton[20][20];
 //   a.createBlock(mapp,  5, 5, 3);
   //  askCoordinate(x,y,type);
    //grid(mapp);
-   JPanel clickToAction = new JPanel(true);
-   clickToAction.setSize(10, 10);
-    JButton residential= new JButton();
-    JButton commertial= new JButton();
-    JButton service= new JButton();
+//   JPanel clickToAction = new JPanel(true);
+//   clickToAction.setSize(10, 10);
+//    JButton residential= new JButton();
+//    JButton commertial= new JButton();
+//    JButton service= new JButton();
 //    clickToAction.add(residential);
 //    clickToAction.add(commertial);
 //    clickToAction.add(service);
     
-    clickToAction.setVisible(true);
-    clickToAction.setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createEtchedBorder(), "Login Panel"));
+//    clickToAction.setVisible(true);
+//    clickToAction.setBorder(BorderFactory.createTitledBorder(
+//            BorderFactory.createEtchedBorder(), "Login Panel"));
 
 //    setDefaultCloseOperation(EXIT_ON_CLOSE );
     
-    
+    new InfoFrame();
     
   }
  
