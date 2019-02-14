@@ -4,12 +4,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GameFrame extends JFrame{
-	MapPanel mapPanel = new MapPanel();
+	Grid g = new Grid("MetroBlocks");
+   
+	
 	
 	public GameFrame() {
 		this.setTitle("MetroBlocks");
 	    this.setExtendedState(this.MAXIMIZED_BOTH);
 	    this.setLocationRelativeTo(null);
 	    this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+	    this.add(g);
+	    this.setVisible(true);
 	}
 }

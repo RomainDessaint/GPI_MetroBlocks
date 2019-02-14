@@ -12,7 +12,7 @@ public class BlockCreator {
 		this.scanner = new Scanner(System.in);
 	}
 	
-	void askCoordinate() {
+	public void askCoordinate() {
 		int x, y, type;
 		System.out.println("Coordonnée X ?");
 		x = scanner.nextInt();
