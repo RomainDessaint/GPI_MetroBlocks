@@ -1,17 +1,16 @@
 package core;
 
 public abstract class Block {
-	private int maxPopulation;
-	private int currentPopulation;
-	private boolean haveStation;
-	private Station station;
+	private int maxPopulation;			//Population maximum du quartier
+	private int currentPopulation;		//Population actuelle du quartier
+	private boolean haveStation;		//True si la station possède une station, false sinon
+	private Station station;			//Station construite dans ce quartier
 	
 	public Block(int maxPopulation, int currentPopulation, boolean haveStation,Station station) {
 		this.maxPopulation = maxPopulation;
 		this.currentPopulation = currentPopulation;
 		this.haveStation = haveStation;
 		this.station = station;
-
 	}
 
 	public int getMaxPopulation() {

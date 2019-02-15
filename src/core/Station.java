@@ -3,8 +3,8 @@ package core;
 
 public class Station {
 	
-	private String name;
-	private int cost;
+	private String name;			//Nom de la station	
+	private int cost;				//Coût de la station
 
 	public Station(String name, int cost) {
 		this.name = name;

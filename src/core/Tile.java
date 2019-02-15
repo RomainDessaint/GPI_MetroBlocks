@@ -3,15 +3,14 @@ package core;
 public class Tile {
 	private int coordinateX;		//Coordonnée X de la tuile dans la carte
 	private int coordinateY;		//Coordonnée Y de la tuile dans la carte
-	private int type;				//Type de la tuile 
-	private Block block; 
+	private int type;				//Nature de la tuile (vide, amménagée, ...)
+	private Block block; 			//Quartier construit sur cette tuile
 	
 	public Tile(int coordinateX, int coordinateY, int type,Block block) {
 		this.coordinateX = coordinateX;
 		this.coordinateY = coordinateY;
 		this.type = type;
 		this.block = block;
-
 	}
 
 	public int getCoordinateX() {
@@ -36,8 +35,5 @@ public class Tile {
 
 	public void setBlock(Block block) {
 		this.block = block;
-	}
-	
-	
-	
+	}	
 }
