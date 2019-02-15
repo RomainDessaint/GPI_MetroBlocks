@@ -1,7 +1,6 @@
 package gui;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class GameFrame extends JFrame{
 	Grid g = new Grid("MetroBlocks");

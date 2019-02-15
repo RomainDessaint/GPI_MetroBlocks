@@ -32,14 +32,32 @@ public class Map {
 		
 		for(i=0; i<sizeX; i++) {
 			for(j=0; j<sizeY; j++) {
-				switch(this.getBoard()[i][j].getType()) {
+				
+				Tile currentTile = this.getBoard()[i][j];
+				
+				switch(currentTile.getType()) {
 					case 0 : System.out.print("X ");
 					break;
-					case 1 : System.out.print("R ");
+					case 1 : 
+						//if (currentTile.getBlock().isHaveStation() == false) {
+							System.out.print("R ");
+						//} else {
+						//	System.err.print("R ");
+						//}
 					break;
-					case 2 : System.out.print("C ");
+					case 2 : 
+						//if (currentTile.getBlock().isHaveStation() == false) {
+							System.out.print("C ");
+						//} else {
+						//  System.err.print("C ");
+						//}
 					break;
-					case 3 : System.out.print("P ");
+					case 3 : 
+						//if (currentTile.getBlock().isHaveStation() == false) {
+							System.out.print("P ");
+						//} else {
+						//	System.err.print("P ");
+						//}
 					break;
 				}
 			}

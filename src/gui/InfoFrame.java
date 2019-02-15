@@ -1,11 +1,11 @@
 package gui;
 
-import java.awt.*;
-import javax.swing.*;
-import javax.tools.DiagnosticCollector;
+import java.awt.GridLayout;
 
-import java.util.*;
-import core.*;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class InfoFrame extends JFrame {
 
@@ -31,7 +31,7 @@ public class InfoFrame extends JFrame {
 //		R.setText("Residential block");
 		R.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				createBlock(map, x, y, type);
+				//createBlock(map, x, y, type);
 			}
 		});
 		info.add(R);

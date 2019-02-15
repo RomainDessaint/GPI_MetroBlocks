@@ -5,9 +5,9 @@ public class CommercialBlock extends Block {
 	private int averageTransportTime;
 	private int satisfaction;
 	
-	public CommercialBlock(int maxPopulation, int currentPopulation, boolean haveStation, int tax,
+	public CommercialBlock(int maxPopulation, int currentPopulation, boolean haveStation,Station station, int tax,
 			int averageTransportTime, int satisfaction) {
-		super(maxPopulation, currentPopulation, haveStation);
+		super(maxPopulation, currentPopulation, haveStation,station);
 		this.tax = tax;
 		this.averageTransportTime = averageTransportTime;
 		this.satisfaction = satisfaction;

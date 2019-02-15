@@ -4,11 +4,14 @@ public abstract class Block {
 	private int maxPopulation;
 	private int currentPopulation;
 	private boolean haveStation;
+	private Station station;
 	
-	public Block(int maxPopulation, int currentPopulation, boolean haveStation) {
+	public Block(int maxPopulation, int currentPopulation, boolean haveStation,Station station) {
 		this.maxPopulation = maxPopulation;
 		this.currentPopulation = currentPopulation;
 		this.haveStation = haveStation;
+		this.station = station;
+
 	}
 
 	public int getMaxPopulation() {
@@ -33,5 +36,13 @@ public abstract class Block {
 
 	public void setHaveStation(boolean haveStation) {
 		this.haveStation = haveStation;
+	}
+
+	public Station getStation() {
+		return station;
+	}
+
+	public void setStation(Station station) {
+		this.station = station;
 	}
 }
