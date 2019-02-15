@@ -13,7 +13,6 @@ public class Main {
 		
 		System.out.println("Création de la MAP");
 		
-		
 		map.printBoard();
 		
 		BlockCreator blockCreator = new BlockCreator(map);
