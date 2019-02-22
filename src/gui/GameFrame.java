@@ -2,9 +2,11 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import core.*;
+
+import core.Map;
 
 public class GameFrame extends JFrame {
 	JPanel wholePanel = new JPanel();
