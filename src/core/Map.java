@@ -40,11 +40,7 @@ public class Map {
 				switch(currentTile.getType()) {
 					case 0 : System.out.print("X ");
 					break;
-					case 1 : 
-					if(currentTile.getBlock().isHaveStation())
-						System.out.print("M ");
-					else 
-						System.out.print("R ");
+					case 1 : System.out.print("R ");
 					break;
 					case 2 : System.out.print("C ");
 					break;
