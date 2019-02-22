@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import core.*;
 
-public class MapPanel extends JPanel implements MouseListener{
+public class MapPanel extends JPanel {
 	private Map map;
 	private int frameSizeX, frameSizeY;
 	private Boolean drawResult;
@@ -32,9 +32,20 @@ public class MapPanel extends JPanel implements MouseListener{
 			e.printStackTrace();
 		}
 		this.setVisible(true);
-		this.addMouseListener(this);
 	}
 	
+	public int getSpriteSize() {
+		return spriteSize;
+	}
+	public void setSpriteSize(int spriteSize) {
+		this.spriteSize = spriteSize;
+	}
+	public int getFrameSizeX() {
+		return frameSizeX;
+	}
+	public int getFrameSizeY() {
+		return frameSizeY;
+	}
 	public void setFrameSizeX(int frameSizeX) {
 		this.frameSizeX = frameSizeX;
 	}
@@ -93,39 +104,5 @@ public class MapPanel extends JPanel implements MouseListener{
 				}	
 			}
 		}
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		System.out.print("Coord X :");
-		System.out.println(e.getX() / spriteSize + 1);
-		
-		System.out.print("Coord Y :");
-		System.out.println(e.getY() / spriteSize + 1);
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 }
