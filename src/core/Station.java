@@ -2,7 +2,6 @@ package core;
 
 
 public class Station {
-	
 	private String name;			//Nom de la station	
 	private int cost;				//Coût de la station
 
@@ -25,5 +24,11 @@ public class Station {
 
 	public void setCost(int cost) {
 		this.cost = cost;
+	}
+	
+	@Override
+	public String toString() {
+		String s = this.getName();
+		return s;
 	}
 }
