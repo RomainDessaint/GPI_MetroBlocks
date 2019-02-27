@@ -11,7 +11,7 @@ public class LineCreator {
 	private int lastClickedX;
 	private int lastClickedY;
 	
-	public LineCreator(Map map) {
+	public LineCreator(Map map, Game game) {
 		this.map = map;
 		this.actionScanner = new Scanner(System.in);
 		this.scanner = new Scanner(System.in);

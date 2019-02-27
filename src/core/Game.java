@@ -27,6 +27,7 @@ public class Game implements MouseListener {
 	private OptionPanel optionPanel;
 	
 	private Boolean freeClicking;
+	private Boolean lineTracing;
 
 	public Game() {
 		// Création de la carte du jeu 
@@ -43,10 +44,11 @@ public class Game implements MouseListener {
 		// Link the lot
 		gameFrame.getPanel().add(mapPanel, BorderLayout.CENTER);
 		
-		optionPanel = new OptionPanel(map);
+		optionPanel = new OptionPanel(map, this);
 		gameFrame.getPanel().add(optionPanel, BorderLayout.SOUTH);
 		
 		freeClicking = true;
+		lineTracing = false;
 		
 		while (!quit) {
 			// Calling the repaint methods to update the graphics
@@ -106,5 +108,9 @@ public class Game implements MouseListener {
 	
 	public void setFreeClicking(Boolean state) {
 		this.freeClicking = state;
+	}
+
+	public Map getMap() {
+		return map;
 	}
 }
