@@ -5,9 +5,9 @@ public class ResidentialBlock extends Block {
 	private int averageTransportTime;
 	private int satisfaction;
 	
-	public ResidentialBlock(int maxPopulation, int currentPopulation, boolean haveStation,Station station, int tax,
+	public ResidentialBlock(String name ,int maxPopulation, int currentPopulation, boolean haveStation,Station station, int tax,
 			int averageTransportTime, int satisfaction) {
-		super(maxPopulation, currentPopulation, haveStation, station);
+		super(name, maxPopulation, currentPopulation, haveStation, station);
 		this.tax = tax;
 		this.averageTransportTime = averageTransportTime;
 		this.satisfaction = satisfaction;

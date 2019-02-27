@@ -1,15 +1,17 @@
 package core;
 
 public abstract class Block {
+	private String name;
 	private int maxPopulation;			//Population maximum du quartier
 	private int currentPopulation;		//Population actuelle du quartier
-	private boolean haveStation;		//True si la station possède une station, false sinon
+	private boolean hasStation;		//True si la station possède une station, false sinon
 	private Station station;			//Station construite dans ce quartier
 	
-	public Block(int maxPopulation, int currentPopulation, boolean haveStation,Station station) {
+	public Block(String name, int maxPopulation, int currentPopulation, boolean haveStation, Station station) {
+		this.name = name;
 		this.maxPopulation = maxPopulation;
 		this.currentPopulation = currentPopulation;
-		this.haveStation = haveStation;
+		this.hasStation = haveStation;
 		this.station = station;
 	}
 
@@ -29,12 +31,12 @@ public abstract class Block {
 		this.currentPopulation = currentPopulation;
 	}
 
-	public boolean isHaveStation() {
-		return haveStation;
+	public boolean isHasStation() {
+		return hasStation;
 	}
 
 	public void setHaveStation(boolean haveStation) {
-		this.haveStation = haveStation;
+		this.hasStation = haveStation;
 	}
 
 	public Station getStation() {
@@ -44,4 +46,14 @@ public abstract class Block {
 	public void setStation(Station station) {
 		this.station = station;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 }

@@ -95,7 +95,7 @@ public class MapPanel extends JPanel {
 					break;
 				}
 				if(map.getBoard()[positionX][positionY].getBlock() != null) {
-					if(map.getBoard()[positionX][positionY].getBlock().isHaveStation()) {
+					if(map.getBoard()[positionX][positionY].getBlock().isHasStation()) {
 						drawResult = g.drawImage(metroStationSprite, positionY * spriteSize, positionX * spriteSize, spriteSize, spriteSize, null);
 					}
 				}	

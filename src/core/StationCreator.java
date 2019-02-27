@@ -27,9 +27,9 @@ public class StationCreator {
 	}
 
 	//Fonction de création d'une station
-	void createStation(Map map, int x, int y, String name) {
+	public void createStation(Map map, int x, int y, String name) {
 		if(map.getBoard()[y-1][x-1].getBlock() != null) {
-			if(map.getBoard()[y-1][x-1].getBlock().isHaveStation() == false) {
+			if(map.getBoard()[y-1][x-1].getBlock().isHasStation() == false) {
 				map.getBoard()[y-1][x-1].getBlock().setHaveStation(true);
 				Station station = new Station(name, 200);
 				map.getBoard()[y-1][x-1].getBlock().setStation(station);

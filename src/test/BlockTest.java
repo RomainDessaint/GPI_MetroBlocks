@@ -11,7 +11,7 @@ public class BlockTest extends TestCase {
 
 		Tile[][] map = new Tile[2][3];	
 		
-		PublicServiceBlock PSB = new PublicServiceBlock(100, 0, false,null, 800);
+		PublicServiceBlock PSB = new PublicServiceBlock("Block", 100, 0, false,null, 800);
 		
 		assertTrue(PSB instanceof PublicServiceBlock);
 

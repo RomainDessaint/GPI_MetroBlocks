@@ -5,8 +5,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Scanner;
 
+import javax.swing.JPanel;
+
 import gui.GameFrame;
+import gui.InformationFrame;
 import gui.MapPanel;
+import gui.OptionPanel;
 
 public class Game implements MouseListener {
 
@@ -20,6 +24,9 @@ public class Game implements MouseListener {
 
 	private GameFrame gameFrame;
 	private MapPanel mapPanel;
+	private OptionPanel optionPanel;
+	
+	private Boolean freeClicking;
 
 	public Game() {
 		// Création de la carte du jeu 
@@ -35,7 +42,12 @@ public class Game implements MouseListener {
 		mapPanel.addMouseListener(this);
 		// Link the lot
 		gameFrame.getPanel().add(mapPanel, BorderLayout.CENTER);
-
+		
+		optionPanel = new OptionPanel(map);
+		gameFrame.getPanel().add(optionPanel, BorderLayout.SOUTH);
+		
+		freeClicking = true;
+		
 		while (!quit) {
 			// Calling the repaint methods to update the graphics
 			mapPanel.removeAll();
@@ -45,9 +57,6 @@ public class Game implements MouseListener {
 			// Update the size of the panel of the game to resize the sprites
 			mapPanel.setFrameSizeX(gameFrame.getPanel().getSize().width);
 			mapPanel.setFrameSizeY(gameFrame.getPanel().getSize().height);
-			
-			// Affichage des actions possibles du joueur en mode console
-			printActions();
 
 			// Small delay to redraw
 			try {
@@ -56,65 +65,6 @@ public class Game implements MouseListener {
 				e.printStackTrace();
 			}
 		}
-	}
-	
-	public void printActions() {
-		int action;
-		Scanner actionScanner = new Scanner(System.in);
-		System.out.println("Que voulez-vous faire ?");
-		System.out.println("1 - Creer un quartier.");
-		System.out.println("2 - Creer une station.");
-		System.out.println("3 - Creer une ligne.");
-		System.out.println("4 - Afficher une case.");
-		System.out.println("Action ? : ");
-		action = actionScanner.nextInt();
-		switch(action) {
-			case 1 : 
-				actionBlock();
-			break;
-			case 2 : 
-				actionStation();
-			break;
-			case 3 : 
-				actionLine();
-			break;
-			case 4 : 
-				printCase();
-			break;
-			default : 
-				System.out.println("Choix invalide.\n");
-		}
-	}
-
-	// CREATION D'UN QUARTIER
-	public void actionBlock() {
-		System.out.println("\nCreation d'un quartier...");
-		blockCreator = new BlockCreator(map);
-		blockCreator.askCoordinate();
-	}
-
-	// CREATION D'UNE STATION DE METRO
-	public void actionStation() {
-		System.out.println("\nCreation d'une station...");
-		stationCreator = new StationCreator(map);
-		stationCreator.askCoordinateStation();
-	}
-
-	public void actionLine() {
-		System.out.println("\nCreation d'une ligne...");
-		lineCreator = new LineCreator(map);
-		lineCreator.traceLine();
-	}
-	
-	public void printCase() {
-		Scanner sc = new Scanner(System.in);
-		int x = sc.nextInt();
-		int y = sc.nextInt();
-		System.out.println(map.getBoard()[y-1][x-1].toString()+"\n");
-		if(map.getBoard()[y-1][x-1].getBlock() == null)
-			System.out.println("Station ? : false, ");
-		else
-			System.out.println("Station ? : " +map.getBoard()[y-1][x-1].getBlock().isHaveStation()+"\n");
 	}
 
 	@Override
@@ -125,7 +75,10 @@ public class Game implements MouseListener {
 		// clicked
 		coordX = e.getX() / mapPanel.getSpriteSize() + 1;
 		coordY = e.getY() / mapPanel.getSpriteSize() + 1;
-
+		
+		if(freeClicking)
+			new InformationFrame(map, coordX, coordY, this);
+			
 		// Debugging : printing
 		System.out.println("Coord X : " + coordX);
 		System.out.println("Coord Y : " + coordY);
@@ -134,25 +87,24 @@ public class Game implements MouseListener {
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
-
+	
+	public void setFreeClicking(Boolean state) {
+		this.freeClicking = state;
+	}
 }

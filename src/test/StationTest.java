@@ -11,13 +11,13 @@ public class StationTest extends TestCase {
 
 		Tile[][] map = new Tile[2][3];	
 		
-		PublicServiceBlock PSB = new PublicServiceBlock(100, 0, false,null, 800);
+		PublicServiceBlock PSB = new PublicServiceBlock("Block", 100, 0, false,null, 800);
 		
 		map [1][2] =  new Tile(1, 2, 3, PSB);
 
 		assertNull(map[1][2].getBlock().getStation());
 		
-		assertEquals(false, map[1][2].getBlock().isHaveStation() );
+		assertEquals(false, map[1][2].getBlock().isHasStation() );
 		
 		Station S = new Station ("okok", 200);
 		
@@ -31,7 +31,7 @@ public class StationTest extends TestCase {
 		
 	    assertEquals(S, map[1][2].getBlock().getStation() );
 		
-    	assertEquals(true, map[1][2].getBlock().isHaveStation() );
+    	assertEquals(true, map[1][2].getBlock().isHasStation() );
 
 
 		
